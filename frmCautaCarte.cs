@@ -35,13 +35,7 @@ namespace atestat
 
         private void btnCod_Click(object sender, EventArgs e)
         {
-            if (txtCodCarte.Text == "")
-            {
-                MessageBox.Show("Nu este introdus nici un cod!");
-                return;
-            }
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data source=biblioteca.accdb");
-            con.Open();
+
         }
 
         private void txtTitluCarte_TextChanged(object sender, EventArgs e)
@@ -51,13 +45,7 @@ namespace atestat
 
         private void btnTitlu_Click(object sender, EventArgs e)
         {
-            if (txtTitluCarte.Text == "")
-            {
-                MessageBox.Show("Nu este introdus nici un titlu!");
-                return;
-            }
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data source=biblioteca.accdb");
-            con.Open();
+
         }
 
         private void txtCodCarte_TextChanged(object sender, EventArgs e)
@@ -77,8 +65,82 @@ namespace atestat
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            (this.MdiParent as frmMain).fAddCititor = null;
+            (this.MdiParent as frmMain).fCautaCarte = null;
             Close();
+        }
+
+        private void btnCautare_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbFiltru_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCauta_Click(object sender, EventArgs e)
+        {
+            //-----------Reseteaza lista-----------//
+            grdCarti.Rows.Clear();
+
+            //-----------Legatura cu baza de date-----------//
+            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data source=biblioteca.accdb");
+            con.Open();
+
+            if (txtValue.Text == "" && cmbFiltru.Text!= "Selecteaza filtrul de cautare")
+            {
+                MessageBox.Show("Nu ati completat campul!");
+                return;
+            }
+            if (cmbFiltru.Text == "Selecteaza filtrul de cautare")
+            {
+                //-----------Construieste si executa functia de afisare a tuturor cartilor-----------//
+                string c = "Select* from `Carti`";
+                OleDbCommand cmd = new OleDbCommand(c, con);
+                OleDbDataReader r = cmd.ExecuteReader();
+                while (r.Read())
+                {
+                    grdCarti.Rows.Add(r["cod"].ToString(), r["titlu"].ToString(), r["autor"].ToString(), r["editura"].ToString(), r["anulPublicarii"].ToString(), r["locatie"].ToString(), r["disponibil"].ToString());
+                }
+                r.Close();
+            }
+            else
+            {
+                //-----------Construieste functia-----------//
+                string c = "Select* from `Carti` where " + cmbFiltru.Text + "='" + txtValue.Text + "'";
+                OleDbCommand cmd = new OleDbCommand(c, con);
+
+                //-----------Executa functia-----------//
+                OleDbDataReader r = cmd.ExecuteReader();
+                while (r.Read())
+                {
+                    grdCarti.Rows.Add(r["cod"].ToString(), r["titlu"].ToString(), r["autor"].ToString(), r["editura"].ToString(), r["anulPublicarii"].ToString(), r["locatie"].ToString(), r["disponibilitate"].ToString());
+                }
+                r.Close();
+            }
+
+            //-----------Resetarea campului de cautare-----------//
+            txtValue.Clear();
+
+            //-----------Inchiderea legaturii cu baza de date-----------//
+            con.Close();
+        }
+        public frmModCarte fModCarte = null;
+        private void grdCarti_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("DA");
+            //--------Meniul de modificare--------//
+            fModCarte = new frmModCarte();
+            this.Hide();
+            fModCarte.Show();
+            string id;
+
         }
     }
 }

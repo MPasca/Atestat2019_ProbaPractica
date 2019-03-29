@@ -60,44 +60,73 @@ namespace atestat
         public frmStergeCarte fStergeCarte = null; 
         private void stergereToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(fStergeCarte == null)
-            {
-                fStergeCarte = new frmStergeCarte();
-                fStergeCarte.MdiParent = this;
-                fStergeCarte.Show();
-            }
+            //Schimbare de plan
         }
 
         public frmModCarte fModCarte = null;
         private void modificareToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(fModCarte == null)
-            {
-                fModCarte = new frmModCarte();
-                fModCarte.MdiParent = this;
-                fModCarte.Show();
-            }
+            //Schimbare de plan
         }
 
         public frmModCititor fModCititor = null;
         private void stergereToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(fModCititor == null)
+            //Schimbare de plan
+        }
+
+        public frmStergeCititor frmStergeCititor = null;
+        private void modificareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Schimbare de plan
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public frmIstoric fIstoric = null;
+        private void istoricToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (fIstoric == null)
             {
-                fModCititor = new frmModCititor();
-                fModCititor.MdiParent = this;
-                fModCititor.Show();
+                fIstoric = new frmIstoric();
+                fIstoric.MdiParent = this;
+                fIstoric.Show();
             }
         }
 
-        public frmStergeCititor fStergeCititor = null;
-        private void modificareToolStripMenuItem_Click(object sender, EventArgs e)
+        public frmAddImprumut fAddImprumut = null;
+        private void adaugaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(fStergeCititor == null)
+            if (fAddImprumut == null)
             {
-                fStergeCititor = new frmStergeCititor();
-                fStergeCititor.MdiParent = this;
-                fStergeCititor.Show();
+                fAddImprumut = new frmAddImprumut();
+                fAddImprumut.MdiParent = this;
+                fAddImprumut.Show();
+            }
+        }
+
+        public frmStatus fStatus = null;
+        private void istoricToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(fStatus == null)
+            {
+                fStatus = new frmStatus();
+                fStatus.MdiParent = this;
+                fStatus.Show();
+            }
+        }
+
+        public frmCautaFisa fCautaFisa = null;
+        private void cautaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(fCautaFisa == null)
+            {
+                fCautaFisa = new frmCautaFisa();
+                fCautaFisa.MdiParent = this;
+                fCautaFisa.Show();
             }
         }
     }

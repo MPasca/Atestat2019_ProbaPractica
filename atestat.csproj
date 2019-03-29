@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddImprumut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddImprumut.Designer.cs">
+      <DependentUpon>frmAddImprumut.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCautaCititor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,18 @@
     </Compile>
     <Compile Include="frmCautaCarte.Designer.cs">
       <DependentUpon>frmCautaCarte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCautaFisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCautaFisa.Designer.cs">
+      <DependentUpon>frmCautaFisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIstoric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstoric.Designer.cs">
+      <DependentUpon>frmIstoric.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -108,6 +126,12 @@
     <Compile Include="frmModCititor.Designer.cs">
       <DependentUpon>frmModCititor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStergeCarte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +146,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddImprumut.resx">
+      <DependentUpon>frmAddImprumut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCautaCarte.resx">
       <DependentUpon>frmCautaCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCautaCititor.resx">
       <DependentUpon>frmCautaCititor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCautaFisa.resx">
+      <DependentUpon>frmCautaFisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstoric.resx">
+      <DependentUpon>frmIstoric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -142,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModCititor.resx">
       <DependentUpon>frmModCititor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStergeCarte.resx">
       <DependentUpon>frmStergeCarte.cs</DependentUpon>

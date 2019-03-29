@@ -41,6 +41,7 @@
             this.lblTitlu = new System.Windows.Forms.Label();
             this.lblMod = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.checkSterge = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtLoc
@@ -71,7 +72,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.DimGray;
-            this.btnAdd.Location = new System.Drawing.Point(169, 360);
+            this.btnAdd.Location = new System.Drawing.Point(169, 410);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(204, 52);
             this.btnAdd.TabIndex = 23;
@@ -126,6 +127,7 @@
             this.txtTitlu.Name = "txtTitlu";
             this.txtTitlu.Size = new System.Drawing.Size(343, 43);
             this.txtTitlu.TabIndex = 19;
+            this.txtTitlu.TextChanged += new System.EventHandler(this.txtTitlu_TextChanged);
             // 
             // lblAnulPublic
             // 
@@ -201,12 +203,23 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // checkSterge
+            // 
+            this.checkSterge.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSterge.Location = new System.Drawing.Point(26, 364);
+            this.checkSterge.Name = "checkSterge";
+            this.checkSterge.Size = new System.Drawing.Size(178, 40);
+            this.checkSterge.TabIndex = 27;
+            this.checkSterge.Text = "Sterge Cartea";
+            this.checkSterge.UseVisualStyleBackColor = true;
+            // 
             // frmModCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(544, 436);
+            this.ClientSize = new System.Drawing.Size(544, 474);
+            this.Controls.Add(this.checkSterge);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtLoc);
             this.Controls.Add(this.lblLoc);
@@ -246,5 +259,6 @@
         private System.Windows.Forms.Label lblTitlu;
         private System.Windows.Forms.Label lblMod;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox checkSterge;
     }
 }
