@@ -25,13 +25,30 @@ namespace atestat
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(txtPrenume.Text=="" || txtNume.Text=="" || txtClasa.Text == "")
+            if(txtPrenume.Text=="" || txtNume.Text=="" || txtClasa.Text == "" || cmbProf.Text=="")
             {
                 MessageBox.Show("Atentie! Nu sunt completate toate campurile!");
                 return;
             }
+            //--------Legatura cu baza de date----------//
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data source=biblioteca.accdb");
             con.Open();
+
+            //-------------Constructia comenzii--------//
+            string add = "INSERT INTO `Cititori` (`nume`, `prenume`, `clasa`, `profesor`) VALUES ('" + txtNume.Text + "','" + txtPrenume.Text + "','" + txtClasa.Text + "','" + cmbProf.Text + "')";
+            OleDbCommand cmd = new OleDbCommand(add, con);
+
+            //------------Executia comenzii-----------//
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Cititorul a fost adaugat!");
+
+            //------------Resetarea campurilor---------//
+            txtClasa.Clear();
+            txtNume.Clear();
+            txtPrenume.Clear();
+
+            //----------Inchiderea legaturii cu baza de date------//
+            con.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
