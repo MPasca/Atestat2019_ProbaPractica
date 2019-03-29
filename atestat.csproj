@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddImprumut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddImprumut.Designer.cs">
+      <DependentUpon>frmAddImprumut.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCautaCititor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="frmCautaCarte.Designer.cs">
       <DependentUpon>frmCautaCarte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIstoric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIstoric.Designer.cs">
+      <DependentUpon>frmIstoric.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -122,11 +134,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddImprumut.resx">
+      <DependentUpon>frmAddImprumut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCautaCarte.resx">
       <DependentUpon>frmCautaCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCautaCititor.resx">
       <DependentUpon>frmCautaCititor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIstoric.resx">
+      <DependentUpon>frmIstoric.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

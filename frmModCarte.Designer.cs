@@ -126,6 +126,7 @@
             this.txtTitlu.Name = "txtTitlu";
             this.txtTitlu.Size = new System.Drawing.Size(343, 43);
             this.txtTitlu.TabIndex = 19;
+            this.txtTitlu.TextChanged += new System.EventHandler(this.txtTitlu_TextChanged);
             // 
             // lblAnulPublic
             // 

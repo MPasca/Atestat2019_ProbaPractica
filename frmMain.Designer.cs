@@ -31,16 +31,19 @@
             this.meniu = new System.Windows.Forms.MenuStrip();
             this.cititoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adaugareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stergereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.cautareFisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cartiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adaugareToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificareToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.stergereToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.cautareCarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.imprumuturiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.istoricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.istoricToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.adaugaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cautaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meniu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +53,8 @@
             this.meniu.Font = new System.Drawing.Font("Sitka Banner", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.meniu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cititoriToolStripMenuItem,
-            this.cartiToolStripMenuItem});
+            this.cartiToolStripMenuItem,
+            this.imprumuturiToolStripMenuItem});
             this.meniu.Location = new System.Drawing.Point(0, 0);
             this.meniu.Name = "meniu";
             this.meniu.Size = new System.Drawing.Size(679, 27);
@@ -61,8 +65,6 @@
             // 
             this.cititoriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adaugareToolStripMenuItem,
-            this.modificareToolStripMenuItem,
-            this.stergereToolStripMenuItem,
             this.toolStripMenuItem1,
             this.cautareFisaToolStripMenuItem});
             this.cititoriToolStripMenuItem.Name = "cititoriToolStripMenuItem";
@@ -75,20 +77,6 @@
             this.adaugareToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.adaugareToolStripMenuItem.Text = "Adaugare";
             this.adaugareToolStripMenuItem.Click += new System.EventHandler(this.adaugareToolStripMenuItem_Click);
-            // 
-            // modificareToolStripMenuItem
-            // 
-            this.modificareToolStripMenuItem.Name = "modificareToolStripMenuItem";
-            this.modificareToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.modificareToolStripMenuItem.Text = "Modificare";
-            this.modificareToolStripMenuItem.Click += new System.EventHandler(this.modificareToolStripMenuItem_Click);
-            // 
-            // stergereToolStripMenuItem
-            // 
-            this.stergereToolStripMenuItem.Name = "stergereToolStripMenuItem";
-            this.stergereToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.stergereToolStripMenuItem.Text = "Stergere";
-            this.stergereToolStripMenuItem.Click += new System.EventHandler(this.stergereToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -106,8 +94,6 @@
             // 
             this.cartiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adaugareToolStripMenuItem1,
-            this.modificareToolStripMenuItem1,
-            this.stergereToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.cautareCarteToolStripMenuItem});
             this.cartiToolStripMenuItem.Name = "cartiToolStripMenuItem";
@@ -117,35 +103,64 @@
             // adaugareToolStripMenuItem1
             // 
             this.adaugareToolStripMenuItem1.Name = "adaugareToolStripMenuItem1";
-            this.adaugareToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
+            this.adaugareToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.adaugareToolStripMenuItem1.Text = "Adaugare";
             this.adaugareToolStripMenuItem1.Click += new System.EventHandler(this.adaugareToolStripMenuItem1_Click);
-            // 
-            // modificareToolStripMenuItem1
-            // 
-            this.modificareToolStripMenuItem1.Name = "modificareToolStripMenuItem1";
-            this.modificareToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
-            this.modificareToolStripMenuItem1.Text = "Modificare";
-            this.modificareToolStripMenuItem1.Click += new System.EventHandler(this.modificareToolStripMenuItem1_Click);
-            // 
-            // stergereToolStripMenuItem1
-            // 
-            this.stergereToolStripMenuItem1.Name = "stergereToolStripMenuItem1";
-            this.stergereToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
-            this.stergereToolStripMenuItem1.Text = "Stergere";
-            this.stergereToolStripMenuItem1.Click += new System.EventHandler(this.stergereToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(142, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // cautareCarteToolStripMenuItem
             // 
             this.cautareCarteToolStripMenuItem.Name = "cautareCarteToolStripMenuItem";
-            this.cautareCarteToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.cautareCarteToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.cautareCarteToolStripMenuItem.Text = "Cautare carte";
             this.cautareCarteToolStripMenuItem.Click += new System.EventHandler(this.cautareCarteToolStripMenuItem_Click);
+            // 
+            // imprumuturiToolStripMenuItem
+            // 
+            this.imprumuturiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adaugaToolStripMenuItem,
+            this.istoricToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.istoricToolStripMenuItem1,
+            this.cautaToolStripMenuItem});
+            this.imprumuturiToolStripMenuItem.Name = "imprumuturiToolStripMenuItem";
+            this.imprumuturiToolStripMenuItem.Size = new System.Drawing.Size(86, 23);
+            this.imprumuturiToolStripMenuItem.Text = "Imprumuturi";
+            // 
+            // istoricToolStripMenuItem
+            // 
+            this.istoricToolStripMenuItem.Name = "istoricToolStripMenuItem";
+            this.istoricToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.istoricToolStripMenuItem.Text = "Imprumuturi in desfasurare";
+            // 
+            // istoricToolStripMenuItem1
+            // 
+            this.istoricToolStripMenuItem1.Name = "istoricToolStripMenuItem1";
+            this.istoricToolStripMenuItem1.Size = new System.Drawing.Size(217, 24);
+            this.istoricToolStripMenuItem1.Text = "Istoric";
+            this.istoricToolStripMenuItem1.Click += new System.EventHandler(this.istoricToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(214, 6);
+            // 
+            // adaugaToolStripMenuItem
+            // 
+            this.adaugaToolStripMenuItem.Name = "adaugaToolStripMenuItem";
+            this.adaugaToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.adaugaToolStripMenuItem.Text = "Adauga";
+            this.adaugaToolStripMenuItem.Click += new System.EventHandler(this.adaugaToolStripMenuItem_Click);
+            // 
+            // cautaToolStripMenuItem
+            // 
+            this.cautaToolStripMenuItem.Name = "cautaToolStripMenuItem";
+            this.cautaToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.cautaToolStripMenuItem.Text = "Cauta";
             // 
             // frmMain
             // 
@@ -174,16 +189,19 @@
         private System.Windows.Forms.MenuStrip meniu;
         private System.Windows.Forms.ToolStripMenuItem cititoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adaugareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stergereToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cautareFisaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cartiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adaugareToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificareToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem stergereToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cautareCarteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imprumuturiToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripMenuItem istoricToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem istoricToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem adaugaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem cautaToolStripMenuItem;
     }
 }
 

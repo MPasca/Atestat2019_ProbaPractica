@@ -100,5 +100,31 @@ namespace atestat
                 fStergeCititor.Show();
             }
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+        public frmIstoric fIstoric = null;
+        private void istoricToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (fIstoric == null)
+            {
+                fIstoric = new frmIstoric();
+                fIstoric.MdiParent = this;
+                fIstoric.Show();
+            }
+        }
+
+        public frmAddImprumut fAddImprumut = null;
+        private void adaugaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fAddImprumut == null)
+            {
+                fAddImprumut = new frmAddImprumut();
+                fAddImprumut.MdiParent = this;
+                fAddImprumut.Show();
+            }
+        }
     }
 }

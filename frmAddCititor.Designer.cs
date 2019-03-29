@@ -37,6 +37,8 @@
             this.lblPrenume = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblProf = new System.Windows.Forms.Label();
+            this.cmbProf = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblAddCititor
@@ -127,7 +129,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.DimGray;
-            this.btnAdd.Location = new System.Drawing.Point(164, 270);
+            this.btnAdd.Location = new System.Drawing.Point(171, 336);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(204, 52);
             this.btnAdd.TabIndex = 20;
@@ -149,6 +151,32 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblProf
+            // 
+            this.lblProf.BackColor = System.Drawing.Color.Transparent;
+            this.lblProf.Font = new System.Drawing.Font("Century Schoolbook", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProf.ForeColor = System.Drawing.Color.Black;
+            this.lblProf.Location = new System.Drawing.Point(13, 246);
+            this.lblProf.Name = "lblProf";
+            this.lblProf.Size = new System.Drawing.Size(118, 43);
+            this.lblProf.TabIndex = 22;
+            this.lblProf.Text = "Profesor:";
+            this.lblProf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbProf
+            // 
+            this.cmbProf.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbProf.Font = new System.Drawing.Font("Century Schoolbook", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProf.ForeColor = System.Drawing.Color.Black;
+            this.cmbProf.FormattingEnabled = true;
+            this.cmbProf.Items.AddRange(new object[] {
+            "DA",
+            "NU"});
+            this.cmbProf.Location = new System.Drawing.Point(137, 254);
+            this.cmbProf.Name = "cmbProf";
+            this.cmbProf.Size = new System.Drawing.Size(83, 28);
+            this.cmbProf.TabIndex = 23;
+            // 
             // frmAddCititor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +184,8 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(544, 400);
             this.ControlBox = false;
+            this.Controls.Add(this.cmbProf);
+            this.Controls.Add(this.lblProf);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtClasa);
@@ -191,5 +221,7 @@
         private System.Windows.Forms.Label lblPrenume;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblProf;
+        private System.Windows.Forms.ComboBox cmbProf;
     }
 }
